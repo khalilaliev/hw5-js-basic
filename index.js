@@ -20,15 +20,7 @@ console.log("Level first task 3:", max(389, 358));
 
 /// Level second ///
 
-const pow = (x, n) => {
-  if (x === undefined && n === undefined) {
-    return 9;
-  }
-  // if (n === 0) {
-  //   return 1;
-  // } else {
-  //   return x * pow(x, n - 1);
-  // }
+const pow = (x = 3, n = 2) => {
   return n === 0 ? 1 : x * pow(x, n - 1);
 };
 console.log("Level second - default value:", pow());
@@ -36,29 +28,19 @@ console.log("Level second:", pow(2, 4));
 
 /// Level third ///
 
-const sumOrConcatenation = (value1, value2) => {
-  if (value1 === undefined && value2 === undefined) {
-    return 30;
-  }
+const sumOrConcatenation = (value1 = 15, value2 = 15) => {
   if (typeof value1 === "string" || typeof value2 === "string") {
-    // return "Result of concatenation " + value1 + " " + value2;
     console.log("Result of concatenation: " + value1 + " " + value2);
   } else if (typeof value1 === "number" && typeof value2 === "number") {
-    // return value1 + value2;
     console.log("Level third - sum:", value1 + value2);
   } else {
-    // return "Incorrect arguments!";
-
     console.log("Incorrect arguments!");
   }
+  return value1 + value2;
 };
 console.log("Level third - default value:", sumOrConcatenation());
 sumOrConcatenation("23212", 53214);
-sumOrConcatenation(321, 532);
-
-// console.log("Level third - default value:", sumOrConcatenation());
-// console.log("Level third - concatenation:", sumOrConcatenation("23", 534));
-// console.log("Level third - sum:", sumOrConcatenation(3, 5));
+sumOrConcatenation(31, 532);
 
 /// Level fourth ///
 
